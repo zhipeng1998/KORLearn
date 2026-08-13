@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { vocabData as fallbackVocab } from '../components/Vocabulary/vocabData';
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
 export const useVocab = () => {
   const [vocabList, setVocabList] = useState([]);
