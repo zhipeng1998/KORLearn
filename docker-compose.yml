@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: korean_db
+    environment:
+      POSTGRES_USER: ispm
+      POSTGRES_PASSWORD: ispm
+      POSTGRES_DB: korean_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: korean_backend
+    environment:
+      - DATABASE_URL=postgresql://ispm:ispm@db:5432/korean_app?schema=public
+      - JWT_SECRET=supersecretjwtkey
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    restart: unless-stopped
+    # Add a wait-for-it or healthcheck to ensure db is ready before prisma migrations
+    command: sh -c "npx prisma db push --accept-data-loss && node server.js"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: korean_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

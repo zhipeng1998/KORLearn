@@ -1,0 +1,213 @@
+/* Container styling with a subtle, modern gradient background */
+.hangul-module-container {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header section styling */
+.hangul-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.hangul-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  letter-spacing: -0.5px;
+}
+
+/* Filters with Glassmorphism */
+.hangul-filters {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hangul-filter-btn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a6c7d;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hangul-filter-btn:hover {
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.hangul-filter-btn.active {
+  background: #ffffff;
+  color: #4a90e2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Layout */
+.hangul-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* Glassmorphism Card Design */
+.hangul-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.03),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Smooth lift and glow on hover */
+.hangul-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(74, 144, 226, 0.15),
+    inset 0 0 0 1px #ffffff;
+}
+
+/* Subtle decorative top border element */
+.hangul-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2, #63b3ed);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hangul-card:hover::before {
+  opacity: 1;
+}
+
+/* Distinguish types on hover */
+.hangul-card.vowel::before {
+  background: linear-gradient(90deg, #ed8936, #f6ad55);
+}
+
+.hangul-card.consonant::before {
+  background: linear-gradient(90deg, #4a90e2, #63b3ed);
+}
+
+/* Card Typography */
+.hangul-char {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hangul-card:hover .hangul-char {
+  color: #2b6cb0;
+  transform: scale(1.05);
+}
+
+.hangul-card.vowel:hover .hangul-char {
+  color: #c05621;
+}
+
+.hangul-romanization {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.hangul-type-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.hangul-card.consonant .hangul-type-badge {
+  background: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+}
+
+.hangul-card.vowel .hangul-type-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.hangul-card.consonant .hangul-type-badge {
+  color: #3182ce;
+  background: rgba(49, 130, 206, 0.12);
+}
+
+/* Responsive constraints */
+@media (max-width: 768px) {
+  .hangul-module-container {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .hangul-title {
+    font-size: 2.2rem;
+  }
+  
+  .hangul-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .hangul-char {
+    font-size: 3rem;
+  }
+  
+  .hangul-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

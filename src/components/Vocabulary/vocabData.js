@@ -1,0 +1,122 @@
+export const vocabData = [
+  { id: 1, korean: '안녕하세요', translation: 'Hello / 你好', romanization: 'annyeonghaseyo' },
+  { id: 2, korean: '감사합니다', translation: 'Thank you / 谢谢', romanization: 'gamsahamnida' },
+  { id: 3, korean: '네', translation: 'Yes / 是的', romanization: 'ne' },
+  { id: 4, korean: '아니요', translation: 'No / 不是', romanization: 'aniyo' },
+  { id: 5, korean: '사랑해요', translation: 'I love you / 我爱你', romanization: 'saranghaeyo' },
+  { id: 6, korean: '미안합니다', translation: 'I am sorry / 对不起', romanization: 'mianhamnida' },
+  { id: 7, korean: '주세요', translation: 'Please give me / 请给我', romanization: 'juseyo' },
+  { id: 8, korean: '괜찮아요', translation: 'It is okay / 没关系', romanization: 'gwaenchanayo' },
+  { id: 9, korean: '맛있어요', translation: 'It is delicious / 很好吃', romanization: 'masisseoyo' },
+  { id: 10, korean: '친구', translation: 'Friend / 朋友', romanization: 'chingu' },
+  { id: 11, korean: '사람', translation: 'Person / 人', romanization: 'saram' },
+  { id: 12, korean: '집', translation: 'House / 家', romanization: 'jip' },
+  { id: 13, korean: '오늘', translation: 'Today / 今天', romanization: 'oneul' },
+  { id: 14, korean: '내일', translation: 'Tomorrow / 明天', romanization: 'naeil' },
+  { id: 15, korean: '어제', translation: 'Yesterday / 昨天', romanization: 'eoje' },
+  { id: 16, korean: '시간', translation: 'Time / 时间', romanization: 'sigan' },
+  { id: 17, korean: '물', translation: 'Water / 水', romanization: 'mul' },
+  { id: 18, korean: '밥', translation: 'Rice/Meal / 饭', romanization: 'bap' },
+  { id: 19, korean: '학교', translation: 'School / 学校', romanization: 'hakgyo' },
+  { id: 20, korean: '회사', translation: 'Company / 公司', romanization: 'hoesa' },
+  { id: 21, korean: '가다', translation: 'To go / 去', romanization: 'gada' },
+  { id: 22, korean: '오다', translation: 'To come / 来', romanization: 'oda' },
+  { id: 23, korean: '먹다', translation: 'To eat / 吃', romanization: 'meokda' },
+  { id: 24, korean: '보다', translation: 'To see / 看', romanization: 'boda' },
+  { id: 25, korean: '하다', translation: 'To do / 做', romanization: 'hada' },
+  { id: 26, korean: '좋다', translation: 'To be good / 好', romanization: 'jota' },
+  { id: 27, korean: '크다', translation: 'To be big / 大', romanization: 'keuda' },
+  { id: 28, korean: '작다', translation: 'To be small / 小', romanization: 'jakda' },
+  { id: 29, korean: '누구', translation: 'Who / 谁', romanization: 'nugu' },
+  { id: 30, korean: '어디', translation: 'Where / 哪里', romanization: 'eodi' },
+
+  // Nouns
+  { id: 31, korean: '가족', translation: 'Family / 家人', romanization: 'gajok' },
+  { id: 32, korean: '돈', translation: 'Money / 钱', romanization: 'don' },
+  { id: 33, korean: '마음', translation: 'Mind/Heart / 心', romanization: 'maeum' },
+  { id: 34, korean: '이름', translation: 'Name / 名字', romanization: 'ireum' },
+  { id: 35, korean: '길', translation: 'Road/Way / 路', romanization: 'gil' },
+  { id: 36, korean: '나라', translation: 'Country / 国家', romanization: 'nara' },
+  { id: 37, korean: '도시', translation: 'City / 城市', romanization: 'dosi' },
+  { id: 38, korean: '영화', translation: 'Movie / 电影', romanization: 'yeonghwa' },
+  { id: 39, korean: '음악', translation: 'Music / 音乐', romanization: 'eumak' },
+  { id: 40, korean: '책', translation: 'Book / 书', romanization: 'chaek' },
+  { id: 41, korean: '커피', translation: 'Coffee / 咖啡', romanization: 'keopi' },
+  { id: 42, korean: '차', translation: 'Tea/Car / 茶/车', romanization: 'cha' },
+  { id: 43, korean: '하늘', translation: 'Sky / 天空', romanization: 'haneul' },
+  { id: 44, korean: '바다', translation: 'Sea / 大海', romanization: 'bada' },
+  { id: 45, korean: '눈', translation: 'Eye/Snow / 眼睛/雪', romanization: 'nun' },
+  
+  // Verbs
+  { id: 46, korean: '자다', translation: 'To sleep / 睡', romanization: 'jada' },
+  { id: 47, korean: '마시다', translation: 'To drink / 喝', romanization: 'masida' },
+  { id: 48, korean: '만나다', translation: 'To meet / 见面', romanization: 'mannada' },
+  { id: 49, korean: '사다', translation: 'To buy / 买', romanization: 'sada' },
+  { id: 50, korean: '배우다', translation: 'To learn / 学习', romanization: 'bauda' },
+  { id: 51, korean: '알다', translation: 'To know / 知道', romanization: 'alda' },
+  { id: 52, korean: '모르다', translation: 'To not know / 不知道', romanization: 'moreuda' },
+  { id: 53, korean: '살다', translation: 'To live / 居住/生活', romanization: 'salda' },
+  { id: 54, korean: '기다리다', translation: 'To wait / 等待', romanization: 'gidarida' },
+  { id: 55, korean: '듣다', translation: 'To listen / 听', romanization: 'deutda' },
+  
+  // Adjectives
+  { id: 56, korean: '많다', translation: 'To be many / 多', romanization: 'manta' },
+  { id: 57, korean: '적다', translation: 'To be few / 少', romanization: 'jeokda' },
+  { id: 58, korean: '예쁘다', translation: 'To be pretty / 漂亮', romanization: 'yeppeuda' },
+  { id: 59, korean: '비싸다', translation: 'To be expensive / 贵', romanization: 'bissada' },
+  { id: 60, korean: '싸다', translation: 'To be cheap / 便宜', romanization: 'ssada' },
+  { id: 61, korean: '어렵다', translation: 'To be difficult / 难', romanization: 'eoryeopda' },
+  { id: 62, korean: '쉽다', translation: 'To be easy / 容易', romanization: 'swipda' },
+  { id: 63, korean: '빠르다', translation: 'To be fast / 快', romanization: 'bbareuda' },
+  { id: 64, korean: '느리다', translation: 'To be slow / 慢', romanization: 'neurida' },
+  { id: 65, korean: '춥다', translation: 'To be cold / 冷', romanization: 'chupda' },
+  
+  // Phrases / Others
+  { id: 66, korean: '진짜', translation: 'Really / 真的', romanization: 'jinjja' },
+  { id: 67, korean: '빨리', translation: 'Quickly / 快点', romanization: 'ppalli' },
+  { id: 68, korean: '많이', translation: 'A lot / 多多地', romanization: 'mani' },
+  { id: 69, korean: '조금', translation: 'A little / 一点', romanization: 'jogeum' },
+  { id: 70, korean: '잘', translation: 'Well / 好好地', romanization: 'jal' },
+  { id: 71, korean: '아주', translation: 'Very / 非常', romanization: 'aju' },
+  { id: 72, korean: '항상', translation: 'Always / 总是', romanization: 'hangsang' },
+  { id: 73, korean: '가끔', translation: 'Sometimes / 偶尔', romanization: 'gakkeum' },
+  { id: 74, korean: '지금', translation: 'Now / 现在', romanization: 'jigeum' },
+  { id: 75, korean: '나중에', translation: 'Later / 以后', romanization: 'najunge' },
+
+  // Food & Drink
+  { id: 76, korean: '빵', translation: 'Bread / 面包', romanization: 'ppang' },
+  { id: 77, korean: '우유', translation: 'Milk / 牛奶', romanization: 'uyu' },
+  { id: 78, korean: '과일', translation: 'Fruit / 水果', romanization: 'gwail' },
+  { id: 79, korean: '고기', translation: 'Meat / 肉', romanization: 'gogi' },
+  
+  // Nature & Weather
+  { id: 80, korean: '비', translation: 'Rain / 雨', romanization: 'bi' },
+  { id: 81, korean: '바람', translation: 'Wind / 风', romanization: 'baram' },
+  { id: 82, korean: '봄', translation: 'Spring / 春天', romanization: 'bom' },
+  { id: 83, korean: '여름', translation: 'Summer / 夏天', romanization: 'yeoreum' },
+  { id: 84, korean: '가을', translation: 'Autumn / 秋天', romanization: 'gaeul' },
+  { id: 85, korean: '겨울', translation: 'Winter / 冬天', romanization: 'gyeoul' },
+  
+  // Animals
+  { id: 86, korean: '강아지', translation: 'Puppy / 小狗', romanization: 'gangaji' },
+  { id: 87, korean: '고양이', translation: 'Cat / 猫', romanization: 'goyangi' },
+  
+  // Verbs Part 2
+  { id: 88, korean: '주다', translation: 'To give / 给', romanization: 'juda' },
+  { id: 89, korean: '받다', translation: 'To receive / 接受', romanization: 'batda' },
+  { id: 90, korean: '걷다', translation: 'To walk / 走', romanization: 'geotda' },
+  { id: 91, korean: '뛰다', translation: 'To run / 跑', romanization: 'ttwida' },
+  { id: 92, korean: '쉬다', translation: 'To rest / 休息', romanization: 'swida' },
+  { id: 93, korean: '일하다', translation: 'To work / 工作', romanization: 'ilhada' },
+  
+  // Adjectives Part 2
+  { id: 94, korean: '덥다', translation: 'To be hot / 热', romanization: 'deopda' },
+  { id: 95, korean: '맛없다', translation: 'To be tasteless / 难吃', romanization: 'madeopda' },
+  { id: 96, korean: '재미있다', translation: 'To be fun/interesting / 有趣', romanization: 'jaemiitda' },
+  { id: 97, korean: '재미없다', translation: 'To be boring / 无趣', romanization: 'jaemieopda' },
+  { id: 98, korean: '바쁘다', translation: 'To be busy / 忙碌', romanization: 'bappeuda' },
+  { id: 99, korean: '아프다', translation: 'To be sick/hurt / 痛/生病', romanization: 'apeuda' },
+  
+  // Conjunctions/Adverbs
+  { id: 100, korean: '그리고', translation: 'And / 还有/然后', romanization: 'geurigo' }
+];

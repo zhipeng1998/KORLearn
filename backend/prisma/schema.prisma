@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int        @id @default(autoincrement())
+  username      String     @unique
+  password      String
+  xp            Int        @default(0)
+  streak        Int        @default(0)
+  lastStudyDate DateTime?
+  progress      Progress[]
+  createdAt     DateTime   @default(now())
+}
+
+model Word {
+  id           Int        @id @default(autoincrement())
+  korean       String
+  translation  String
+  romanization String?
+  progress     Progress[]
+  createdAt    DateTime   @default(now())
+}
+
+model Progress {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  wordId         Int
+  
+  // SRS SM-2 Algorithm fields
+  interval       Int      @default(0)    // days until next review
+  easeFactor     Float    @default(2.5)  // how easy it is (multiplier)
+  nextReviewDate DateTime @default(now())
+  reviewCount    Int      @default(0)
+  
+  user           User     @relation(fields: [userId], references: [id])
+  word           Word     @relation(fields: [wordId], references: [id])
+  createdAt      DateTime @default(now())
+
+  @@unique([userId, wordId])
+}
