@@ -40,7 +40,7 @@ const DashboardModule = () => {
         <h1 className="welcome-message">{t('dash_welcome')}</h1>
         
         {/* Gamification Stats */}
-        <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+        <div className="stats-grid">
           <div className="glass-panel" style={{ padding: '1.5rem', textAlign: 'center' }}>
             <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🔥</div>
             <h3 style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{language === 'en' ? 'Day Streak' : '连续学习'}</h3>

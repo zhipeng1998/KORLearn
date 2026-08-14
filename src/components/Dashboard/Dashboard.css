@@ -107,3 +107,20 @@
   color: var(--accent-color);
   margin: 0;
 }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .dashboard-glass-card {
+    padding: 1.5rem;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

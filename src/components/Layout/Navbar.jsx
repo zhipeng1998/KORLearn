@@ -35,7 +35,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar glass-panel">
+    <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
           <Link to="/" onClick={closeMobileMenu}>
@@ -74,7 +74,7 @@ function Navbar() {
             <Link to="/admin" className="theme-toggle-btn" aria-label="Admin Settings" title="Manage Vocabulary" onClick={closeMobileMenu}>
               ⚙️
             </Link>
-            <button className="theme-toggle-btn" onClick={() => { toggleLanguage(); closeMobileMenu(); }} aria-label="Toggle language" style={{ fontSize: '1rem', fontWeight: 'bold' }}>
+            <button className="theme-toggle-btn" onClick={() => { toggleLanguage(); closeMobileMenu(); }} aria-label="Toggle language">
               {language === 'en' ? '中' : 'EN'}
             </button>
             <button className="theme-toggle-btn" onClick={() => { toggleTheme(); closeMobileMenu(); }} aria-label="Toggle theme">

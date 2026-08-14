@@ -37,7 +37,7 @@ services:
       dockerfile: Dockerfile
     container_name: korean_frontend
     ports:
-      - "80:80"
+      - "3002:80"
     depends_on:
       - backend
     restart: unless-stopped
