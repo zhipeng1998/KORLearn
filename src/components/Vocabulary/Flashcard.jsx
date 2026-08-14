@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { globalAudioPlayer } from '../../utils/audio';
 import './Vocabulary.css';
 
 const Flashcard = ({ card }) => {
@@ -6,13 +7,9 @@ const Flashcard = ({ card }) => {
 
   const playAudio = (e) => {
     e.stopPropagation(); // Prevent flipping when clicking audio
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(card.korean);
-      utterance.lang = 'ko-KR';
-      utterance.rate = 0.85; // slightly slower for learners
-      window.speechSynthesis.speak(utterance);
-    } else {
-      alert("Text-to-speech not supported in this browser.");
+    if (card && card.id) {
+      const url = `/audio/vocab/${card.id}.mp3`;
+      globalAudioPlayer.play(url);
     }
   };
 

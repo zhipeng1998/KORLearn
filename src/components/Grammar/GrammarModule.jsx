@@ -1,19 +1,15 @@
 import React from 'react';
+import { globalAudioPlayer } from '../../utils/audio';
 import { useLanguage } from '../../context/LanguageContext';
 import './Grammar.css';
 
 const GrammarModule = () => {
   const { t, language } = useLanguage();
 
-  const playAudio = (text, e) => {
+  const playAudio = (id, e) => {
     if (e) e.stopPropagation();
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ko-KR';
-      utterance.rate = 0.8;
-      window.speechSynthesis.speak(utterance);
-    }
+    const url = `/audio/grammar/${id}.mp3`;
+    globalAudioPlayer.play(url);
   };
 
   return (
@@ -58,7 +54,7 @@ const GrammarModule = () => {
                 <span className="lang-label">{t('grammar_ko_sov')}</span>
                 <div 
                   className="sentence highlight-pulse" 
-                  onClick={(e) => playAudio('저는 사과를 먹어요', e)}
+                  onClick={(e) => playAudio('sov_example', e)}
                   style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }}
                   title="Click to hear pronunciation"
                 >
@@ -146,7 +142,7 @@ const GrammarModule = () => {
                 <p>{t('grammar_informal_desc')}</p>
                 <div 
                   className="usage" 
-                  onClick={(e) => playAudio('안녕! 먹어.', e)}
+                  onClick={(e) => playAudio('informal_ex', e)}
                   style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}
                 >
                   <strong style={{ display: 'block', fontSize: '1.2rem', marginBottom: '0.2rem' }}>{t('grammar_informal_ex')} 🔊</strong>
@@ -162,7 +158,7 @@ const GrammarModule = () => {
                 <p>{t('grammar_polite_desc')}</p>
                 <div 
                   className="usage" 
-                  onClick={(e) => playAudio('안녕하세요! 먹어요.', e)}
+                  onClick={(e) => playAudio('polite_ex', e)}
                   style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}
                 >
                   <strong style={{ display: 'block', fontSize: '1.2rem', marginBottom: '0.2rem' }}>{t('grammar_polite_ex')} 🔊</strong>
@@ -178,7 +174,7 @@ const GrammarModule = () => {
                 <p>{t('grammar_formal_desc')}</p>
                 <div 
                   className="usage" 
-                  onClick={(e) => playAudio('안녕하십니까! 먹습니다.', e)}
+                  onClick={(e) => playAudio('formal_ex', e)}
                   style={{ cursor: 'pointer', background: 'var(--bg-card)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}
                 >
                   <strong style={{ display: 'block', fontSize: '1.2rem', marginBottom: '0.2rem' }}>{t('grammar_formal_ex')} 🔊</strong>

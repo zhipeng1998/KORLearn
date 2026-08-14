@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { hangulData } from './hangulData';
 import { useLanguage } from '../../context/LanguageContext';
+import { globalAudioPlayer } from '../../utils/audio';
 import './HangulBoard.css';
 
 const HangulBoard = () => {
@@ -11,15 +12,11 @@ const HangulBoard = () => {
     filter === 'all' ? true : item.type === filter
   );
 
-  const playAudio = (text, e) => {
+  const playAudio = (item, e) => {
     if (e) e.stopPropagation();
-    if ('speechSynthesis' in window) {
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ko-KR';
-      utterance.rate = 0.8; // Slightly slower for learning
-      window.speechSynthesis.speak(utterance);
+    if (item && item.romanization) {
+      const url = `/audio/hangul/${item.romanization}.mp3`;
+      globalAudioPlayer.play(url);
     }
   };
 
@@ -56,7 +53,7 @@ const HangulBoard = () => {
             <div 
               key={`basic-${index}`} 
               className={`hangul-card ${item.type}`}
-              onClick={(e) => playAudio(item.char, e)}
+              onClick={(e) => playAudio(item, e)}
               style={{ cursor: 'pointer', position: 'relative' }}
               title="Click to hear pronunciation"
             >
@@ -76,7 +73,7 @@ const HangulBoard = () => {
             <div 
               key={`adv-${index}`} 
               className={`hangul-card ${item.type}`}
-              onClick={(e) => playAudio(item.char, e)}
+              onClick={(e) => playAudio(item, e)}
               style={{ cursor: 'pointer', position: 'relative' }}
               title="Click to hear pronunciation"
             >
